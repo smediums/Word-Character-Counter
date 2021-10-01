@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #ddd;
+  font-family: 'Hind', sans-serif;
+}
+
+body .wrapper {
+  position: absolute;
+  width: 90vmin;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+body .wrapper .container {
+  background: #f0e6d4;
+  padding: 50px 30px 80px 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+body .wrapper .container textarea {
+  width: 100%;
+  background: #f0e6d4;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+  line-height: 28px;
+  color: #3b3b3b;
+}
+
+body .wrapper .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  padding: 20px;
+  position: relative;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  text-align: center;
+}
+
+body .wrapper .count div {
+  background: rgba(157, 177, 167, 0.413);
+  width: 45%;
+  border-radius: 10px;
+  padding: 1.5rem 0;
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+body .wrapper .count div h5 {
+  font-size: 32px;
+}
+
+body .wrapper .count div p {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
