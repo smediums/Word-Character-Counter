@@ -23,13 +23,16 @@ $textColor: #3b3b3b;
      font-family: 'Hind', sans-serif;
 
      .wrapper{
+         @include centerFlex(center);
+         flex-direction: column;
          position: absolute;
-         width: 90vmin;
+         width: 90vw;
          transform: translate(-50%, -50%);
          top: 50%;
          left: 50%;
 
          .container{
+             width: 100%;
              background: $mainColor;
              padding: 50px 30px 80px 30px;
              border-radius: 10px;
@@ -53,9 +56,10 @@ $textColor: #3b3b3b;
              @include centerFlex(space-around);
              width: 80%;
              padding: 20px;
-             position: relative;
+             position: absolute;
              transform: translate(-50%, -50%);
              left: 50%;
+             top: 100%;
              text-align: center;
 
              div{
