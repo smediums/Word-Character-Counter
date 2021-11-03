@@ -14,13 +14,13 @@ textArea.addEventListener('input', () => {
     wordCount.textContent = allText.split(/\s+/).filter((el) => el).length;
 });
 
-// setGoal.addEventListener('input', () => {
-//     const num = parseInt(setGoal.value);
-//     const onlyNumbers = /[0-9]|\./;
+setGoal.addEventListener('input', () => {
+    const num = parseInt(setGoal.value);
+    const onlyNumbers = /[0-9]|\./;
 
-//     if(!onlyNumbers.test(num)){
-//         setGoal.value = '';
-//     }
+    if(!onlyNumbers.test(num)){
+        setGoal.value = '';
+    }
 
-//     console.log(num)
-// })
+    console.log(num)
+})
