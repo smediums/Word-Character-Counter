@@ -31,6 +31,25 @@ $textColor: #3b3b3b;
          top: 50%;
          left: 50%;
 
+         .goal{
+            margin-bottom: 1rem;
+            .setGoal{
+                @include centerFlex(center);
+                flex-direction: column;
+
+                input{
+                    width: 50px;;
+                }
+
+                .set{
+                    padding: 0.4rem .6rem;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $accentColor;
+                }
+            }
+         }
+
          .container{
              width: 100%;
              background: $mainColor;

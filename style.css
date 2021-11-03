@@ -34,6 +34,37 @@ body .wrapper {
   left: 50%;
 }
 
+body .wrapper .goal {
+  margin-bottom: 1rem;
+}
+
+body .wrapper .goal .setGoal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .wrapper .goal .setGoal input {
+  width: 50px;
+}
+
+body .wrapper .goal .setGoal .set {
+  padding: 0.4rem .6rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(157, 177, 167, 0.413);
+}
+
 body .wrapper .container {
   width: 100%;
   background: #f0e6d4;
