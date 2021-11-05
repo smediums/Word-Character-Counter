@@ -11,27 +11,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header>
+        <h1 class="logo">Count'em</h1>
+        <nav class="nav">
+            <ul>
+                <li class="navLink">Home</li>
+                <li class="navLink">About</li>
+                <li class="navLink">Services</li>
+                <li class="navLink">Contact</li>
+            </ul>
+        </nav>
+    </header>
     <div class="wrapper">
-        <div class="goal">
-            <div class="setGoal">
-                <input type="text" id="wordsAmount">
-                <button class="set" id="set">Set Goal</button>
-            </div>
-            <div class="wordsTillGoal"></div>
-        </div>
         <div class="container">
-            <textarea name="" id="inputTextArea" rows="12" placeholder="Place text here"></textarea>
-        </div>
-        <div class="count">
-            <div>
-                <h5 id="wordCount">0</h5>
-                <p>Words</p>
+            <!-- Counts -->
+            <div class="count">
+                <div class="wordCount">
+                    <p>Words</p>
+                    <h5 id="wordCount">0</h5>
+                </div>
+                <div class="charCount">
+                    <p>Characters</p>
+                    <h5 id="charCount">0</h5>
+                </div>
+                <div class="sentenceCount">
+                    <p>Sentences</p>
+                    <h5 id="sentenceCount">0</h5>
+                </div>
+                <div class="paragraphCount">
+                    <p>Paragraphs</p>
+                    <h5 id="paraCount">0</h5>
+                </div>
             </div>
-            <div>
-                <h5 id="characterCount">0</h5>
-                <p>Characters</p>
+            <!-- textarea -->
+            <textarea name="" id="inputTextArea" rows="12" placeholder="Place text here"></textarea>
+            <!-- Goals -->
+            <div class="goal">
+                <h6><span>Category</span><span>Goal</span><span>Complete</span></h6>
+                <div class="setGoal">
+                    <p>Words</p>
+                    <input type="text" id="wordsAmount" placeholder="Set">
+                    <p class="percentage" data-reference="wordCount">0%</p>
+                </div>
+                <div class="setGoal">
+                    <p>Characters</p>
+                    <input type="text" id="chrAmount" placeholder="Set">
+                    <p class="percentage" data-reference="charCount">0%</p>
+                </div>
+                <div class="setGoal">
+                    <p>Sentences</p>
+                    <input type="text" id="sentenceAmount" placeholder="Set">
+                    <p class="percentage" data-reference="sentenceCount">0%</p>
+                </div>
+                <div class="setGoal">
+                    <p>Paragraphs</p>
+                    <input type="text" id="paraAmount" placeholder="Set">
+                    <p class="percentage" data-reference="paraCount">0%</p>
+                </div>
             </div>
         </div>
     </div>

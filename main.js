@@ -1,25 +1,76 @@
 const textArea = document.getElementById('inputTextArea');
-const charCount = document.getElementById('characterCount');
+const charCount = document.getElementById('charCount');
 const wordCount = document.getElementById('wordCount');
+const sentenceCount = document.getElementById('sentenceCount');
+const paraCount = document.getElementById('paraCount');
 const setGoal = document.getElementById('wordsAmount');
-const set = document.getElementById('set');
-const tillGoal = document.querySelector('.wordsTillGoal');
+const percentageComplete = document.querySelectorAll('.percentage');
 
-//
+
+//Textarea functionality
 textArea.addEventListener('input', () => {
-    let curWordCount = parseInt(wordCount.textContent);
-    let curWordsTillGoal = parseInt(setGoal.value);
     //Number of Characters
     charCount.textContent = textArea.value.length;
 
-    //Create array By Spaces 
+    //Word count
     let allText = textArea.value.trim();
     wordCount.textContent = allText.split(/\s+/).filter((el) => el).length;
 
-    tillGoal.innerHTML = `${curWordsTillGoal - curWordCount} words until reach goal`
-   
+    //Sentence count
+    numOfSentences = allText.split(/[!.?]|\./).length - 1
+    sentenceCount.textContent = numOfSentences
+    
+    //Paragraph Count
+    if(numOfSentences % 3 == 0){
+        paraCount.textContent = numOfSentences / 3
+    }else{
+        let decrementSentence = parseInt(sentenceCount.textContent);
+        decrementSentence--;
+        if(decrementSentence % 3 == 0){
+            paraCount.textContent = decrementSentence / 3
+        }else{
+            decrementSentence--;
+            paraCount.textContent = decrementSentence / 3
+        }
+    }
+
+    //Percentage completed
+    percentageComplete.forEach(percent => {
+        const reference = percent.getAttribute('data-reference');
+        const references = document.querySelectorAll('h5')
+        const inputValue = percent.previousElementSibling.value
+
+        if(inputValue == ''){
+            percent.textContent = '0%'
+        }else{
+            for(let i = 0; i < references.length; i++){
+                if(references[i].getAttribute('id') == reference){
+                    let count = parseInt(references[i].textContent);
+                    let thePercentage = `${((count / parseInt(inputValue)) * 100).toFixed(1)}%`
+
+                    percent.textContent = thePercentage
+                    if(percent.textContent == '100.0%'){
+                        percent.textContent = '100%'
+                        percent.parentElement.classList.add('goalReached');
+                        
+                    }else{
+                        percent.parentElement.classList.remove('goalReached')
+                        percent.textContent = thePercentage
+                    }
+
+                    if(percent.textContent == '0.0%'){
+                        percent.textContent = '0%'
+                    }else{
+                        percent.textContent = thePercentage;
+                    }
+                }
+            }
+        }
+    })
 });
 
+
+//Set a goal only allow numbers
 setGoal.addEventListener('input', () => {
     const num = parseInt(setGoal.value);
     const onlyNumbers = /[0-9]|\./;
@@ -27,16 +78,4 @@ setGoal.addEventListener('input', () => {
     if(!onlyNumbers.test(num)){
         setGoal.value = '';
     }
-})
-
-set.addEventListener('click', () => {
-
-    if(setGoal.value == '' ){
-        tillGoal.innerHTML = `0 words until you reach your goal`
-
-    }else{
-        tillGoal.innerHTML = `${setGoal.value} words until you reach your goal`
-    console.log(parseInt(wordCount.textContent))
-    }
-    
 })

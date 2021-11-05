@@ -1,0 +1,16 @@
+// Variable
+$mainColor: #ebebeb;
+$accentColor: rgb(157, 177, 167);
+$textColor: #8c816e;
+//Mixins
+@mixin centerFlex($justify){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+    @media screen and (max-width: 760px) {
+        @content;
+    }
+}
