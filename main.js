@@ -7,6 +7,23 @@ const setGoal = document.getElementById('wordsAmount');
 const percentageComplete = document.querySelectorAll('.percentage');
 
 
+//Toggle menu
+document.querySelector('.toggler').addEventListener('click', () => {
+    const navLinks = document.querySelectorAll('.navLink');
+
+    //Nav show and hide when hamburg clicked
+    document.querySelector('nav').classList.toggle('show');
+
+    //Nav hide when navlink is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('nav').classList.remove('show')
+        })
+    })
+})
+
+
+
 //Textarea functionality
 textArea.addEventListener('input', () => {
     //Number of Characters
